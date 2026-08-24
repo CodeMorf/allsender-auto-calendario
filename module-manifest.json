@@ -2,7 +2,7 @@
   "name": "allsender-auto-calendario",
   "version": "2026.08.24",
   "runtime": "AllSender Auth",
-  "sourceCommit": "700f389",
+  "sourceCommit": "a34e577",
   "providerPolicy": {
     "llm": "codemorf",
     "fallbackExternalProviders": false
