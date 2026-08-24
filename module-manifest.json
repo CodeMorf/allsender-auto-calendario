@@ -1,0 +1,31 @@
+{
+  "name": "allsender-auto-calendario",
+  "version": "2026.08.24",
+  "runtime": "AllSender Auth",
+  "sourceCommit": "700f389",
+  "providerPolicy": {
+    "llm": "codemorf",
+    "fallbackExternalProviders": false
+  },
+  "entrypoints": {
+    "dashboard": "app/[locale]/(dashboard)/modulo/reservas/page.tsx",
+    "automationRouting": "lib/automation/engine.ts",
+    "conversationAgent": "lib/modules/reservas/agent.ts",
+    "idempotencyMigration": "migrations/20260824_auto_calendar_hardening.sql"
+  },
+  "requiredEnvironment": [
+    "POSTGRES_URL",
+    "NYLAS_ENABLED",
+    "NYLAS_API_KEY",
+    "NYLAS_CLIENT_ID",
+    "NYLAS_CALLBACK_URL",
+    "NYLAS_RESERVAS_MODULE_ENABLED",
+    "CRON_SECRET"
+  ],
+  "safety": {
+    "tenantScoped": true,
+    "duplicateBookingProtection": true,
+    "restaurantIntentGuard": true,
+    "cronRequiresToken": true
+  }
+}
